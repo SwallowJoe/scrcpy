@@ -92,6 +92,9 @@ public final class Workarounds {
             // ConfigurationController was introduced in Android 12, so do not attempt to set it on lower versions.
             // <https://github.com/Genymobile/scrcpy/issues/4467>
             mustFillConfigurationController = true;
+
+            // For Android U, some api like InputManager must use application to initilize
+            mustFillAppContext = true;
         }
 
         if (mustFillConfigurationController) {
